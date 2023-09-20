@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruas By Zayana</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/icon.svg" id="icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="../assets/icon.svg" alt="Ruas Logo">
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <div class="nav">
+                <ul class="nav-items">
+                    <li id="kelas" class="active"><a href="/html/kelas.html">Kelas</a></li>
+                    <li id="tugas" class="inactive"><a href="/html/tugas.html">Daftar Tugas</a></li>
+                    <li id="percakapan" class="inactive"><a href="/html/percakapan.html">Percakapan</a></li>
+                </ul>
+            </div>
+        </aside>
+        <div class="class-detail content">
+            <div class="class-detail banner">
+                <h1>UI/UX Kelas 11</h1>
+            </div>
+            <div class="sticky-nav">
+                <ul>
+                    <li><button id="tugas-btn">Tugas Kelas</button></li>
+                    <li><button id="materi-btn">Materi Kelas</button></li>
+                </ul>
+                <br>
+                <hr class="green">
+            </div>
+
+            <div class="list-tugas" id="list-tugas">
+                <div class="tugas" onclick="location.href = '/html/detail-tugas.html'">
+                    <div class="name">
+                        <img src="/assets/icons/document-icon.svg" alt="">
+                        <ul>
+                            <li class="title">Ringkasan Materi Design System</li>
+                            <li class="description">4 September</li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li class="deadline">Batas: 5 September</li>
+                    </ul>
+                </div>
+                <div class="tugas">
+                    <div class="name">
+                        <img src="/assets/icons/document-icon.svg" alt="">
+                        <ul>
+                            <li class="title">Membuat 3 Screen UI Mobile</li>
+                            <li class="description">10 Agustus</li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li class="deadline">Batas: 17 Agustus</li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <div class="list-materi" id="list-materi">
+                <div class="tugas">
+                    <div class="name">
+                        <img src="/assets/icons/document-icon.svg" alt="">
+                        <ul>
+                            <li class="title">Design System</li>
+                            <li class="description">Bahan Bacaan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                var tugasBtn = document.getElementById('tugas-btn');
+                var materiBtn = document.getElementById('materi-btn');
+                var listTugas = document.getElementById('list-tugas');
+                var listMateri = document.getElementById('list-materi');
+                
+                tugasBtn.onclick = function(){
+                    listTugas.style.display = "flex"
+                    listMateri.style.display = "none"
+                }
+                
+                materiBtn.onclick = function(){
+                    listMateri.style.display = "flex"
+                    listTugas.style.display = "none"
+                }
+            </script>
+        </div>
+    </main>
+</body>
+</html>

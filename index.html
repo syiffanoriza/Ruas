@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruas By Zayana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icon.svg" id="icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="assets/icon.svg" alt="Ruas Logo">
+            <ul class="scrollpoints">
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#fitur">Fitur</a></li>
+                <li><a href="#panduan">Panduan</a></li>
+            </ul>
+            <ul class="userlog">
+                <li><button class="btn default" id="masuk">Masuk</button></li>
+                <li><button class="btn default" id="daftar">Daftar</button></li>
+            </ul>
+        </nav>
+        
+        <div class="modal" id="modal">
+            <div class="masuk" id="modal-masuk">
+                <span class="close" id="close-masuk">&times;</span>
+                <h2>Masuk ke Akun</h2>
+                <p>Yuk, mulai belajar di Ruas</p>
+                <br>
+                <form action="">
+                    <label for="email-input">Alamat Email</label>
+                    <input type="text" id="email-input" class="email">
+                    <label for="password-input">Password</label>
+                    <input type="text" id="password-input" class="password">
+                    <ul>
+                        <li class="bottom">
+                            <input type="checkbox" name="ingat" id="ingat-saya" style="margin-bottom: 0;">
+                            <label for="ingat-saya" style="margin-bottom: 0;">Ingat Saya</label>                            
+                        </li>
+                        <li>
+                            <a href="">Lupa Password?</a>
+                        </li>
+                    </ul>
+                    <a href="html/kelas.html" class="btn default" style="margin-bottom: 2vmin;">Masuk</a>
+                    <a href="html/kelas.html" class="btn reverse" style="margin-bottom: 2vmin;">Daftar</a>
+                </form>
+            </div>
+            <div class="daftar" id="modal-daftar">
+                <span class="close" id="close-daftar">&times;</span>
+                <h2>Masuk ke Akun</h2>
+                <p>Yuk, lanjut belajar di Ruas</p>
+                <br>
+                <form action="">
+                    <label for="email-input">Alamat Email</label>
+                    <input type="text" id="email-input" class="email">
+                    <label for="password-input">Password</label>
+                    <input type="text" id="password-input" class="password">
+                    <ul>
+                        <li class="bottom">
+                            <input type="checkbox" name="ingat" id="ingat-saya" style="margin-bottom: 0;">
+                            <label for="ingat-saya" style="margin-bottom: 0;">Ingat Saya</label>                            
+                        </li>
+                        <li>
+                            <a href="">Lupa Password?</a>
+                        </li>
+                    </ul>
+                    <a href="html/kelas.html" class="btn default" style="margin-bottom: 2vmin; text-align: center;">Masuk</a>
+                    <a href="html/kelas.html" class="btn reverse" style="margin-bottom: 2vmin; text-align: center;">Daftar</a>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            var modal = document.getElementById("modal");
+            var modalMasuk = document.getElementById("modal-masuk");
+            var modalDaftar = document.getElementById("modal-daftar");
+            var btnMasuk = document.getElementById("masuk");
+            var btnDaftar = document.getElementById("daftar");
+            var extMasuk = document.getElementById("close-masuk");
+            var extDaftar = document.getElementById("close-daftar");
+
+            btnMasuk.onclick = function () {
+                modal.style.display = "block"
+                modalDaftar.style.display = "none"
+                modalMasuk.style.display = "flex"
+            }
+            btnDaftar.onclick = function () {
+                modal.style.display = "block"
+                modalMasuk.style.display = "none"
+                modalDaftar.style.display = "flex"
+            }
+            extMasuk.onclick = function (){
+                modal.style.display = "none"
+            }
+            extDaftar.onclick = function (){
+                modal.style.display = "none"
+            }
+        </script>
+    </header>
+    <main>
+        <div class="landingBanner">
+            <div class="left">
+                <h1 class="landing heading">Ruas memberikan <br>yang terbaik</h1>
+                <p class="landing description">Satu aplikasi untuk memenuhi segala <br>kebutuhan ruang kelas anda.</p>
+                <br>
+                <a href="#" class="btn default">Daftar Sekarang</a>
+            </div>
+            <div class="right">
+                <img src="assets/illustration/Homework.svg" alt="Landing Image" class="landing img">
+                <!-- Beli dari UI8 https://www.figma.com/file/5Etel2KCtonHcfixPTChEa/Nallow-Illustration-Bundle?type=design&node-id=2%3A19429&mode=design&t=79QNVFbIgxY0FkAa-1 -->
+            </div>
+        </div>
+        <section id="statistik">
+            <div class="stat" id="murid">
+                <ul>
+                    <li><p>100k</p></li>
+                    <li><p>Murid Terdaftar</p></li>
+                </ul>
+            </div>
+            <div class="stat" id="guru">
+                <ul>
+                    <li><p>30k</p></li>
+                    <li><p>Guru Terdaftar</p></li>
+                </ul>
+            </div>
+            <div class="stat" id="institut">
+                <ul>
+                    <li><p>20k</p></li>
+                    <li><p>Institut Terdaftar</p></li>
+                </ul>
+            </div>
+            <div class="stat" id="pengguna">
+                <ul>
+                    <li><p>40k</p></li>
+                    <li><p>Pengguna Perhari</p></li>
+                </ul>
+            </div>
+        </section>
+        <section id="tentang">
+            <div class="left">
+                <h2>Kenapa harus pilih Ruas?</h2>
+                <ul class="top">
+                    <li>
+                        <h3>Mudah mengumpulkan tugas sekolah </h3>
+                        <p>Dengan menggunakan Ruas, tugas sekolahmu menjadi lebih mudah dikumpulkan tepat waktu.</p>
+                    </li>
+                    <li>
+                        <h3>Nyaman digunakan oleh Guru & Murid</h3>
+                        <p>Interaksi belajar mengajar secara online akan lebih Mudah dan praktis bersama Ruas.</p>
+                    </li>
+                </ul>
+                <ul class="bottom">
+                    <li>
+                        <h3>Memberikan materi dengan mudah</h3>
+                        <p>Jika anda seorang guru, Ruas adalah solusi yang tepat untuk anda berbagi tugas kepada murid.</p>
+                    </li>
+                    <li>
+                        <h3>Tidak dipungut biaya</h3>
+                        <p>Ingin belajar dengan mudah dan efektif? Ruas adalah jawabannya! Bergabunglah dengan kami, gratis!</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <img src="assets/illustration/Mudah.svg" alt="" class="tentang">
+                <!-- Beli dari UI8 https://www.figma.com/file/5Etel2KCtonHcfixPTChEa/Nallow-Illustration-Bundle?type=design&node-id=2%3A19429&mode=design&t=79QNVFbIgxY0FkAa-1 -->
+            </div>
+        </section>
+        <section id="fitur">
+            <ul class="text">
+                <li><h2>Keunggulan</h2></li>
+                <li><p>Kami memiliki beberapa keunggulan hebat</p></li>
+            </ul>
+            <div class="fitur pertama">
+                <img src="assets/illustration/Kebutuhan Online.svg" alt="" class="fitur">
+                <!-- Beli dari UI8 https://www.figma.com/file/5Etel2KCtonHcfixPTChEa/Nallow-Illustration-Bundle?type=design&node-id=2%3A19429&mode=design&t=79QNVFbIgxY0FkAa-1 -->
+                <ul class="right">
+                    <li><h3>Segala kebutuhan yang <br>tersedia secara online</h3></li>
+                    <li><p>Apa yang biasa anda lakukan di ruang kelas, sudah kami <br>sediakan di Ruas; komunikasi, tugas, rapat, apa saja!</p></li>
+                </ul>
+            </div>
+            <div class="fitur kedua">
+                <img src="assets/illustration/Ambil Data.svg" alt="" class="fitur">
+                <!-- Beli dari UI8 https://www.figma.com/file/5Etel2KCtonHcfixPTChEa/Nallow-Illustration-Bundle?type=design&node-id=2%3A19429&mode=design&t=79QNVFbIgxY0FkAa-1 -->
+                <ul class="left">
+                    <li><h3>Terintegrasi dengan <br>layanan Google</h3></li>
+                    <li><p>Akses berkas-berkas dokumen dari akun Google <br>anda secara langsung di Ruas.</p></li>
+                </ul>
+            </div>
+            <div class="fitur ketiga">
+                <img src="assets/illustration/Belajar Online Mudah.svg" alt="" class="fitur">
+                <!-- Beli dari UI8 https://www.figma.com/file/5Etel2KCtonHcfixPTChEa/Nallow-Illustration-Bundle?type=design&node-id=2%3A19429&mode=design&t=79QNVFbIgxY0FkAa-1 -->
+                <ul class="right">
+                    <li><h3>Sistem yang dirancang <br>untuk mempermudah</h3></li>
+                    <li><p>Sudah menjadi misi kami untuk menyediakan fitur lengkap <br>dengan tampilan yang mudah anda pahami</p></li>
+                </ul>
+            </div>
+        </section>
+        <section id="panduan">
+            <div class="left">
+                <ul class="text">
+                    <li><h2>Bagaimana Cara Kerjanya?</h2></li>
+                    <li><p>Bergabunglah dengan kami sekarang dan rasakan <br>fitur pembelajaran online gratis yang tersedia</p></li>
+                </ul>
+                <ul class="step">
+                    <li><h3>Daftarkan Akun</h3></li>
+                    <li><p>Anda dapat memilih daftar sebagai murid atau guru.</p></li>
+                </ul>
+                <ul class="step">
+                    <li><h3>Pilih Ruang Kelas</h3></li>
+                    <li><p>Anda dapat memilih gabung kelas atau membuat kelas.</p></li>
+                </ul>
+                <ul class="step">
+                    <li><h3>Nikmati Kelas Anda!</h3></li>
+                    <li><p>Selamat menikmati fitur yang kami sediakan.</p></li>
+                </ul>
+            </div>
+            <div class="right">
+                <img src="assets/illustration/Alur.svg" alt="">
+                <!-- Beli dari UI8 https://www.figma.com/file/5Etel2KCtonHcfixPTChEa/Nallow-Illustration-Bundle?type=design&node-id=2%3A19429&mode=design&t=79QNVFbIgxY0FkAa-1 -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruas By Zayana</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/icon.svg" id="icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="../assets/icon.svg" alt="Ruas Logo">
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <div class="nav">
+                <ul class="nav-items">
+                    <li id="kelas" class="active"><a href="/html/kelas.html">Kelas</a></li>
+                    <li id="tugas" class="inactive"><a href="/html/tugas.html">Daftar Tugas</a></li>
+                    <li id="percakapan" class="inactive"><a href="/html/percakapan.html">Percakapan</a></li>
+                </ul>
+            </div>
+        </aside>
+        <div class="home content">
+            <div class="home banner">
+                <h1>Selamat Datang, Nadiya!</h1>
+                <p>Ayo selesaikan tugas-tugasmu</p>
+                <br>
+                <ul class="banner-buttons">
+                    <li><input type="text" id="cari-kelas" placeholder="&#x1F50D;&#xFE0E;   Cari kelas anda"></li>
+                    <li><button class="btn reverse"><span class="icon"></span> Masukan Kode</button></li>
+                </ul>
+            </div>
+            <div class="class-list">
+                <h2>Kelas saya</h2>
+                <div class="list">
+                    <div class="kelas green" onclick="location.href = '/html/detail-kelas.html'">
+                        <img class="banner" src="/assets/images/class-banner-1.svg" alt="">
+                        <p class="guru">Ms. Rania Aulia</p>
+                        <h3 class="green">UI/UX Kelas 11</h3>
+                        <br>
+                        <hr class="green">
+                        <img src="/assets/images/class-status.svg" alt="" class="status">
+                    </div>
+                    <div class="kelas blue">
+                        <img class="banner" src="/assets/images/class-banner-2.svg" alt="">
+                        <p class="guru">Ms. Efril Kusuma</p>
+                        <h3 class="blue">English Kelas 11</h3>
+                        <br>
+                        <hr class="blue">
+                        <img src="/assets/images/class-status.svg" alt="" class="status">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,935 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans";
+}
+
+body {
+    background-color: var(--white);
+}
+
+main section {
+    width: 100%;
+}
+
+:root {
+    --black: #1E1E1E;
+    --blackHalf: #1E1E1E7A;
+    --white: #FEFEFE;
+    --grey: #AEAEAE;
+    --null: #00000000;
+    --blue: #4DBDF5;
+    --green: #63E09D;
+    --blueHalf: #e5f7ff64;
+
+    --txtNormal: 400;
+    --txtMedium: 500;
+    --txtSemiBold: 600;
+    --txtBold: 700;
+
+    --txtBigHeading: 7vmin;
+    --txtMediumHeading: 4vmin;
+    --txtSmallHeading: 3vmin;
+    --txtRegular: 2.6vmin;
+
+    --btnText: 2.4vmin;
+    --btnPadding: 6px 16px;
+    --btnRadius: 4px;
+
+    --cardRadius: 4px;
+
+    --sectionPadding: 4rem 5rem;
+    --mobileSectionPadding: 1rem 2.5rem;
+}
+
+h1 {font-size: var(--txtBigHeading);}
+h2 {font-size: var(--txtMediumHeading);}
+h3 {font-size: var(--txtSmallHeading);}
+p {font-size: var(--txtRegular);}
+
+nav {
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--white);
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1.5rem;
+    box-shadow: 0px .5vmin 2vmin var(--white);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: var(--btnText);
+    transition: 200ms;
+}
+
+nav ul a:hover,
+nav ul a:focus {
+    color: var(--green);
+    transition: 200ms;
+}
+
+ul.scrollpoints {
+    gap: 2rem;
+}
+
+ul.userlog {
+    gap: .5rem;
+}
+
+main {
+    padding-top: 4rem;
+}
+
+/* MAIN ELEMENTS */
+
+img.logo {
+    height: 2.5rem;
+    width: auto;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vmin;
+    padding: var(--btnPadding);
+    border-radius: var(--btnRadius);
+    font-weight:var(--txtMedium);
+    font-size: var(--btnText);
+    color: var(--white);
+    text-decoration: none;
+    transition: 200ms;
+}
+
+.btn.default {
+    background-color: var(--green);
+    border: solid 2px var(--green);
+}
+
+.btn.default:hover,
+.btn.default:focus {
+    background-color: var(--greenHalf);
+    border: solid 2px var(--greenHalf);
+    transition: 200ms;
+}
+
+.btn.reverse {
+    background-color: var(--white);
+    border: solid 1.5px var(--green);
+    color: var(--green);
+}
+
+.btn.reverse:hover,
+.btn.reverse:focus {
+    color: var(--white);
+    background-color: var(--greenHalf);
+    border: solid 1.5px var(--greenHalf);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 15vmin;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--blackHalf);
+}
+
+.modal .masuk,
+.modal .daftar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: var(--cardRadius);
+    margin: auto;
+    padding: 40px;
+    width: 40%;
+}
+
+.modal .masuk span.close,
+.modal .daftar span.close {
+    cursor: pointer;
+    font-size: 3vmin;
+}
+
+.modal .masuk h2,
+.modal .daftar h2 {
+    text-align: center;
+}
+
+.modal .masuk p,
+.modal .daftar p {
+    text-align: center;
+}
+
+.modal .masuk form,
+.modal .daftar form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .masuk input,
+.modal .daftar input {
+    padding: 1vmin;
+    margin-bottom: 3vmin;
+}
+
+.modal .masuk label,
+.modal .daftar label {
+    font-size: 2.4vmin;
+    margin-bottom: 1vmin;
+}
+
+.modal .masuk form ul,
+.modal .daftar form ul {
+    display: flex;
+    font-size: 2.4vmin;
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 2vmin;
+}
+
+.modal .masuk form ul a,
+.modal .daftar form ul a {
+    color: black;
+    text-decoration: none;
+}
+
+.modal .masuk form ul .bottom,
+.modal .daftar form ul .bottom{
+    display: flex;
+    align-items: center;
+    gap: 1vmin;
+}
+
+@media screen and (max-width: 1024px) {
+    .modal .masuk,
+    .modal .daftar {
+        width: 80%;
+    }
+}
+/* BANNER */
+
+div.landingBanner {
+    display: flex;
+    gap: 4rem;
+    width: 100%;
+    padding: var(--sectionPadding);
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.landingBanner .landing.img {
+    width: 40vmax;
+    height: auto;
+}
+
+.landingBanner .left {
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.landingBanner p {
+    font-size: 3.5vmin;
+}
+
+@media screen and (max-width: 1024px) {
+    div.landingBanner {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 2em;
+        width: 100%;
+        height: auto;
+        padding: 8rem 2.5rem 4rem 2.5rem;
+    }
+    div.landingBanner .left {
+        align-items: center;
+    }
+    div.landingBanner .landing.img {
+        width: auto;
+        height: 60vmin;
+    }
+}
+
+/* STATISTICS */
+
+section#statistik {
+    display: flex;
+    gap: 20px;
+    padding: var(--sectionPadding);
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.stat {
+    display: flex;
+    height: auto;
+    width: 30%;
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    border-radius: var(--cardRadius);
+    background-color: var(--green);
+}
+
+div.stat ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+div.stat ul li:first-child p {
+    font-size: var(--txtMediumHeading);
+}
+
+div.stat p {
+    font-weight: var(--txtSemiBold);
+}
+
+@media screen and (max-width: 1024px) {
+    section#statistik {
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--mobileSectionPadding);
+    }
+    section#statistik div.stat {
+        width: 100%;
+    }
+}
+
+/* TENTANG KAMI */
+
+section#tentang {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: var(--sectionPadding);
+}
+
+section#tentang div.right {
+    display: flex;
+    align-items: flex-end;
+}
+
+section#tentang div.left {
+    display: flex;
+    flex-direction: column;
+    gap: 4vmin;
+}
+
+section#tentang ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+section#tentang ul li {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+section#tentang ul li h3,
+section#tentang ul li p {
+    width: 20vmax;
+}
+
+@media screen and (max-width: 1024px) {
+    section#tentang {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: var(--mobileSectionPadding);
+    }
+    section#tentang ul {
+        flex-direction: column;
+    }
+    section#tentang ul li h3,
+    section#tentang ul li p {
+        width: 100%;
+    }
+    section#tentang img {
+        width: 60vmin;
+        height: auto;
+        margin: 6vmin 0px;
+    }
+}
+
+/* FITUR KAMI */
+
+section#fitur {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: var(--sectionPadding);
+    align-items: center;
+}
+
+section#fitur ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    list-style: none;
+}
+
+section#fitur ul.text {
+    text-align: center;
+}
+
+section#fitur + h2,
+section#fitur + h2 + p {
+    text-align: center;
+}
+
+section#fitur h3 {
+    font-size: var(--txtMediumHeading);
+}
+
+section#fitur div.fitur{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 4rem;
+}
+
+section#fitur div.fitur.kedua {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+section#fitur div.fitur ul.right {
+    padding-right: 4rem;
+}
+
+section#fitur div.fitur ul.left {
+    padding-left: 4rem;
+}
+
+@media screen and (max-width: 1024px) {
+    section#fitur {
+        padding: var(--mobileSectionPadding);
+        gap: 2vmin;
+    }
+    section#fitur div.fitur {
+        flex-direction: column;
+        align-items: center;
+        gap: 1vmin;
+    }
+    section#fitur div.fitur.kedua {
+        flex-direction: column;
+    }
+    section#fitur div.fitur ul.left {
+        padding-left: 0;
+    }
+    section#fitur ul {
+        flex-direction: column;
+    }
+    section#fitur br {
+        display: none;
+    }
+    section#fitur img {
+        width: 60vmin;
+        height: auto;
+    }
+}
+
+/* CARA KERJANYA */
+
+section#panduan {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--sectionPadding);
+    gap: 4rem;
+}
+
+section#panduan ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5vmin;
+    list-style: none;
+}
+
+section#panduan div.left {
+    display: flex;
+    flex-direction: column;
+    gap: 4vmin;
+}
+
+section#panduan ul.step {
+    padding: 2.4vmin;
+    background-color: var(--blueHalf);
+    border-radius: var(--cardRadius);
+}
+
+/* --- END OF LANDING PAGE --- */
+
+aside {
+    position: fixed;
+}
+
+aside div.nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    height: 100vh;
+    padding-top: 6vmin;
+    width: auto;
+}
+
+aside div.nav ul.nav-items {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    list-style: none;
+}
+
+aside div.nav ul.nav-items li a {
+    font-size: var(--btnText);
+    font-weight: var(--txtSemiBold);
+    padding: 0 6vmin;
+    transition: 200ms;
+    text-decoration: none;
+}
+
+aside div.nav ul.nav-items li.active a {
+    color: var(--white);
+}
+
+aside div.nav ul.nav-items li.active {
+    background-color: var(--green);
+}
+
+aside div.nav ul.nav-items li.inactive a {
+    color: var(--grey);
+}
+
+aside div.nav ul.nav-items li {
+    padding: 1.5vmin 0;
+}
+
+aside div.nav ul.nav-items li.inactive:hover {
+    transition: 200ms;
+    background-color: #0000000f;
+}
+
+aside div.nav ul.nav-items li#kelas.active a::before {
+    content: '';
+    display: inline-block;
+    margin-right: 1vmin;
+    height: 2.4vmin;
+    width: 2.4vmin;
+    background-image: url(/assets/icons/class-active.svg);
+    background-repeat: no-repeat;
+}
+
+aside div.nav ul.nav-items li#kelas.inactive a::before {
+    content: '';
+    display: inline-block;
+    margin-right: 1vmin;
+    height: 2.4vmin;
+    width: 2.4vmin;
+    background-image: url(/assets/icons/class-inactive.svg);
+    background-repeat: no-repeat;
+}
+
+aside div.nav ul.nav-items li#tugas.inactive a::before {
+    content: '';
+    display: inline-block;
+    margin-right: 1vmin;
+    height: 2.4vmin;
+    width: 2.4vmin;
+    background-image: url(/assets/icons/document-inactive.svg);
+    background-repeat: no-repeat;
+}
+
+aside div.nav ul.nav-items li#tugas.active a::before {
+    content: '';
+    display: inline-block;
+    margin-right: 1vmin;
+    height: 2.4vmin;
+    width: 2.4vmin;
+    background-image: url(/assets/icons/document-active.svg);
+    background-repeat: no-repeat;
+}
+
+aside div.nav ul.nav-items li#percakapan.inactive a::before {
+    content: '';
+    display: inline-block;
+    margin-right: 1vmin;
+    height: 2.4vmin;
+    width: 2.4vmin;
+    background-image: url(/assets/icons/chat-inactive.svg);
+    background-repeat: no-repeat;
+}
+
+aside div.nav ul.nav-items li#percakapan.active a::before {
+    content: '';
+    display: inline-block;
+    margin-right: 1vmin;
+    height: 2.4vmin;
+    width: 2.4vmin;
+    background-image: url(/assets/icons/chat-active.svg);
+    background-repeat: no-repeat;
+}
+
+/* KELAS-CONTENT */
+
+div.home.content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blueHalf);
+    padding: 3vmin 3vmin 3vmin 32vmin;
+    height: auto;
+}
+
+div.home.content div.home.banner {
+    display: flex;
+    flex-direction: column;
+    padding: 6vmin;
+    color: var(--white);
+    background-color: var(--green);
+    border-radius: var(--cardRadius);
+}
+
+div.home.content div.home.banner h1 {
+    font-size: var(--txtMediumHeading);
+}
+
+div.home.content div.home.banner ul.banner-buttons {
+    display: flex;
+    gap: 4vmin;
+    list-style: none;
+}
+
+div.home.content div.home.banner .btn {
+    border: none;
+}
+
+.btn span.icon {
+    content: url(/assets/icons/plus-inactive.svg);
+    transition: 200ms;
+}
+
+.btn:hover > span.icon {
+    content: url(/assets/icons/plus-active.svg);
+    transition: 200ms;
+}
+
+
+div.home.content div.home.banner ul.banner-buttons input#cari-kelas {
+    padding: 1.2vmin;
+    border-radius: var(--cardRadius);
+    width: 40vw;
+    border: none;
+    outline: none;
+}
+
+div.home.content div.class-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3vmin;
+    padding: 3vmin 0;
+}
+
+div.home.content div.class-list div.list {
+    display: flex;
+    gap: 3vmin;
+}
+
+div.home.content div.class-list h2 {
+    background-color: var(--green);
+    padding: 1vmin 2vmin;
+    font-size: var(--txtSmallHeading);
+    width: fit-content;
+    color: var(--white);
+    border-radius: var(--cardRadius);
+}
+
+div.class-list div.kelas {
+    display: flex;
+    flex-direction: column;
+    gap: 1vmin;
+    width: 40vmin;
+    cursor: pointer;
+    background-color: var(--white);
+    border-radius: var(--cardRadius);
+    border: solid 1px var(--white);
+}
+
+div.kelas.green:hover {
+    border: solid 1px var(--green);
+    transition: 400ms;
+}
+
+div.kelas.blue:hover {
+    border: solid 1px var(--blue);
+    transition: 400ms;
+}
+
+div.class-list div.kelas img.banner {
+    padding: 2vmin;
+}
+
+div.class-list div.kelas p.guru {
+    font-size: small;
+    padding: 0 2vmin;
+}
+
+div.class-list div.kelas h3 {
+    padding: 0 2vmin;
+}
+
+div.class-list div.kelas h3.green {
+    color: var(--green);
+}
+
+div.class-list div.kelas h3.blue {
+    color: var(--blue);
+}
+
+hr.green {
+    border: solid 1px var(--green);
+}
+
+hr.blue {
+    border: solid 1px var(--blue);
+}
+
+div.class-list div.kelas img.status {
+    height: 6vmin;
+    width: auto;
+    padding: 1vmin 2vmin;
+    align-self: flex-start;
+}
+
+/* DETAIL KELAS */
+
+div.class-detail.content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blueHalf);
+    padding: 3vmin 3vmin 3vmin 32vmin;
+    height: 92vh;
+}
+
+div.class-detail.content div.class-detail.banner {
+    text-align: center;
+    padding: 6vmin;
+    color: var(--white);
+    background-color: var(--green);
+    border-radius: 4px 4px 0 0;
+}
+
+div.class-detail.content div.class-detail.banner h1 {
+    font-size: var(--txtMediumHeading);
+}
+
+div.class-detail.content div.sticky-nav {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    background-color: var(--white);
+    padding: 2vmin 3vmin;
+}
+
+div.sticky-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 3vmin;
+}
+
+div.class-detail.content div.sticky-nav ul button {
+    background-color: var(--null);
+    border: none;
+    cursor: pointer;
+    font-weight: var(--txtSemiBold);
+    font-size: var(--btnText);
+}
+
+div.sticky-nav button#tugas-btn {
+    color: var(--green);
+}
+
+div.class-detail.content div.list-tugas {
+    display: flex;
+    flex-direction: column;
+    gap: 1vmin;
+    background-color: var(--white);
+    border-radius: 0 0 4px 4px;
+    padding: 2vmin;
+}
+
+div.class-detail.content div.list-tugas div.tugas {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vmin 3vmin;
+    background-color: var(--blueHalf);
+    border-radius: var(--cardRadius);
+    cursor: pointer;
+}
+
+div.class-detail.content div.list-tugas div.tugas ul{
+    list-style: none;
+}
+
+div.class-detail.content div.list-tugas div.tugas div.name{
+    display: flex;
+    gap: 3vmin;
+}
+
+div.class-detail.content div.list-tugas div.tugas li.title{
+    color: var(--green);
+    font-weight: var(--txtSemiBold);
+}
+
+div.class-detail.content div.list-tugas div.tugas li.description,
+div.class-detail.content div.list-tugas div.tugas li.deadline{
+    font-size: small;
+}
+
+div.class-detail.content div.list-materi {
+    display: none;
+    flex-direction: column;
+    gap: 1vmin;
+    background-color: var(--white);
+    border-radius: 0 0 4px 4px;
+    padding: 2vmin;
+}
+
+div.class-detail.content div.list-materi div.tugas {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vmin 3vmin;
+    background-color: var(--blueHalf);
+    border-radius: var(--cardRadius);
+    cursor: pointer;
+}
+
+div.class-detail.content div.list-materi div.tugas ul{
+    list-style: none;
+}
+
+div.class-detail.content div.list-materi div.tugas div.name{
+    display: flex;
+    gap: 3vmin;
+}
+
+div.class-detail.content div.list-materi div.tugas li.title{
+    color: var(--green);
+    font-weight: var(--txtSemiBold);
+}
+
+div.class-detail.content div.list-materi div.tugas li.description,
+div.class-detail.content div.list-materi div.tugas li.deadline{
+    font-size: small;
+}
+
+div.class-detail.content div.detail-tugas {
+    display: flex;
+    justify-content: space-between;
+    gap: 1vmin;
+}
+
+div.class-detail.content div.detail-tugas div.tugas{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    background-color: var(--blueHalf);
+}
+
+div.class-detail.content div.detail-tugas div.tugas div.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 4vmin;
+}
+
+div.class-detail.content div.detail-tugas div.tugas div.header div.name {
+    display: flex;
+    gap: 2vmin;
+    width: 80%;
+}
+
+div.detail-tugas div.tugas div.header div.name li.title{
+    font-size: var(--txtSmallHeading);
+    font-weight: var(--txtSemiBold);
+    color: var(--green);
+}
+
+div.class-detail.content div.detail-tugas div.tugas ul{
+    list-style: none;
+}
+div.detail-tugas div.tugas div.description{
+    padding: var(--sectionPadding);
+    font-weight: var(--txtSemiBold);
+    color: var(--green);
+    font-size: 2vmin;
+}
+
+div.detail-tugas div.tugas div.description ol{
+    list-style-position: inside;
+}
+
+div.class-detail.content div.side-control {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    background-color: var(--blueHalf);
+}
+
+div.class-detail.content div.side-control button {
+    margin: 2vmin 2vmin 0 2vmin;
+}
+
+div.class-detail.content div.side-control button.btn.reverse:hover {
+    background-color: var(--green);
+    border: solid 2px var(--green);
+}
+
+div.class-detail.content div.side-control button.btn.default:hover {
+    background-color: var(--white);
+    border: solid 2px var(--green);
+    color: var(--green);
+}
+
+.btn.default span.icon {
+    content: url(/assets/icons/plus-active.svg);
+    transition: 200ms;
+}
+
+.btn.default:hover > span.icon {
+    content: url(/assets/icons/plus-inactive.svg);
+    transition: 200ms;
+}
+
+/* DAFTAR TUGAS */
+
+div.daftar-tugas.content {
+    display: flex;
+    flex-direction: column;
+    padding: 3vmin 3vmin 3vmin 32vmin;
+    height: 92vh;
+}
